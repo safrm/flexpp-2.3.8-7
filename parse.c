@@ -2,11 +2,11 @@
 
 /*  A Bison++ parser, made from parse.y  */
 
- /* with Bison++ version bison++ Version 1.21-7, adapted from GNU bison by coetmeur@icdc.fr
+ /* with Bison++ version bison++ Version 1.21-8, adapted from GNU bison by coetmeur@icdc.fr
   */
 
 
-#line 1 "/u/icdc/rdt/tools/lib/bison.cc"
+#line 1 "/usr/local/lib/bison.cc"
 /* -*-C-*-  Note some compilers choke on comments on `#line' lines.  */
 /* Skeleton output parser for bison,
    Copyright (C) 1984, 1989, 1990 Bob Corbett and Richard Stallman
@@ -89,8 +89,8 @@ void *alloca ();
 #include <stdio.h>
 #define YYBISON 1  
 
-/* #line 77 "/u/icdc/rdt/tools/lib/bison.cc" */
-#line 89 "y.tab.c"
+/* #line 82 "/usr/local/lib/bison.cc" */
+#line 94 "y.tab.c"
 #line 6 "parse.y"
 
 /*-
@@ -136,7 +136,7 @@ static int madeany = false;  /* whether we've made the '.' character class */
 int previous_continued_action;	/* whether the previous rule's action was '|' */
 
 
-#line 77 "/u/icdc/rdt/tools/lib/bison.cc"
+#line 82 "/usr/local/lib/bison.cc"
 /* %{ and %header{ and %union, during decl */
 #define YY_parse_BISON 1
 #ifndef YY_parse_COMPATIBILITY
@@ -182,36 +182,36 @@ int previous_continued_action;	/* whether the previous rule's action was '|' */
 
 #ifndef YY_parse_PURE
 
-/* #line 121 "/u/icdc/rdt/tools/lib/bison.cc" */
-#line 182 "y.tab.c"
+/* #line 126 "/usr/local/lib/bison.cc" */
+#line 187 "y.tab.c"
 
-#line 121 "/u/icdc/rdt/tools/lib/bison.cc"
+#line 126 "/usr/local/lib/bison.cc"
 /*  YY_parse_PURE */
 #endif
 
 /* section apres lecture def, avant lecture grammaire S2 */
 
-/* #line 125 "/u/icdc/rdt/tools/lib/bison.cc" */
-#line 191 "y.tab.c"
+/* #line 130 "/usr/local/lib/bison.cc" */
+#line 196 "y.tab.c"
 
-#line 125 "/u/icdc/rdt/tools/lib/bison.cc"
+#line 130 "/usr/local/lib/bison.cc"
 /* prefix */
 #ifndef YY_parse_DEBUG
 
-/* #line 127 "/u/icdc/rdt/tools/lib/bison.cc" */
-#line 198 "y.tab.c"
+/* #line 132 "/usr/local/lib/bison.cc" */
+#line 203 "y.tab.c"
 
-#line 127 "/u/icdc/rdt/tools/lib/bison.cc"
+#line 132 "/usr/local/lib/bison.cc"
 /* YY_parse_DEBUG */
 #endif
 
 
 #ifndef YY_parse_LSP_NEEDED
 
-/* #line 132 "/u/icdc/rdt/tools/lib/bison.cc" */
-#line 208 "y.tab.c"
+/* #line 137 "/usr/local/lib/bison.cc" */
+#line 213 "y.tab.c"
 
-#line 132 "/u/icdc/rdt/tools/lib/bison.cc"
+#line 137 "/usr/local/lib/bison.cc"
  /* YY_parse_LSP_NEEDED*/
 #endif
 
@@ -321,8 +321,8 @@ typedef
 #ifndef YY_USE_CLASS
 /* TOKEN C */
 
-/* #line 240 "/u/icdc/rdt/tools/lib/bison.cc" */
-#line 321 "y.tab.c"
+/* #line 245 "/usr/local/lib/bison.cc" */
+#line 326 "y.tab.c"
 #define	CHAR	258
 #define	NUMBER	259
 #define	SECTEND	260
@@ -334,7 +334,7 @@ typedef
 #define	EOF_OP	266
 
 
-#line 240 "/u/icdc/rdt/tools/lib/bison.cc"
+#line 245 "/usr/local/lib/bison.cc"
  /* #defines tokens */
 #else
 /* CLASS */
@@ -380,8 +380,8 @@ public:
 #if YY_parse_USE_CONST_TOKEN != 0
 /* static const int token ... */
 
-/* #line 284 "/u/icdc/rdt/tools/lib/bison.cc" */
-#line 380 "y.tab.c"
+/* #line 289 "/usr/local/lib/bison.cc" */
+#line 385 "y.tab.c"
 static const int CHAR;
 static const int NUMBER;
 static const int SECTEND;
@@ -393,13 +393,13 @@ static const int PREVCCL;
 static const int EOF_OP;
 
 
-#line 284 "/u/icdc/rdt/tools/lib/bison.cc"
+#line 289 "/usr/local/lib/bison.cc"
  /* decl const */
 #else
 enum YY_parse_ENUM_TOKEN { YY_parse_NULL_TOKEN=0
 
-/* #line 287 "/u/icdc/rdt/tools/lib/bison.cc" */
-#line 398 "y.tab.c"
+/* #line 292 "/usr/local/lib/bison.cc" */
+#line 403 "y.tab.c"
 	,CHAR=258
 	,NUMBER=259
 	,SECTEND=260
@@ -411,7 +411,7 @@ enum YY_parse_ENUM_TOKEN { YY_parse_NULL_TOKEN=0
 	,EOF_OP=266
 
 
-#line 287 "/u/icdc/rdt/tools/lib/bison.cc"
+#line 292 "/usr/local/lib/bison.cc"
  /* enum token */
      }; /* end of enum declaration */
 #endif
@@ -444,8 +444,8 @@ public:
 /* other declare folow */
 #if YY_parse_USE_CONST_TOKEN != 0
 
-/* #line 318 "/u/icdc/rdt/tools/lib/bison.cc" */
-#line 444 "y.tab.c"
+/* #line 323 "/usr/local/lib/bison.cc" */
+#line 449 "y.tab.c"
 const int YY_parse_CLASS::CHAR=258;
 const int YY_parse_CLASS::NUMBER=259;
 const int YY_parse_CLASS::SECTEND=260;
@@ -457,7 +457,7 @@ const int YY_parse_CLASS::PREVCCL=265;
 const int YY_parse_CLASS::EOF_OP=266;
 
 
-#line 318 "/u/icdc/rdt/tools/lib/bison.cc"
+#line 323 "/usr/local/lib/bison.cc"
  /* const YY_parse_CLASS::token */
 #endif
 /*apres const  */
@@ -470,8 +470,8 @@ YY_parse_CONSTRUCTOR_CODE;
 };
 #endif
 
-/* #line 329 "/u/icdc/rdt/tools/lib/bison.cc" */
-#line 470 "y.tab.c"
+/* #line 334 "/usr/local/lib/bison.cc" */
+#line 475 "y.tab.c"
 
 
 #define	YYFINAL		81
@@ -640,7 +640,7 @@ static const short yycheck[] = {    31,
     42
 };
 
-#line 329 "/u/icdc/rdt/tools/lib/bison.cc"
+#line 334 "/usr/local/lib/bison.cc"
  /* fattrs + tables */
 
 /* parser code folow  */
@@ -854,7 +854,7 @@ YY_parse_PARSE_PARAM_DEF
   register short *yyssp;
   register YY_parse_STYPE *yyvsp;
   int yyerrstatus;      /*  number of tokens to shift before error messages enabled */
-  int yychar1=0;          /*  lookahead token as an internal (translated) token number */
+  int yychar1=0;           /*  lookahead token as an internal (translated) token number */
 
   short yyssa[YYINITDEPTH];     /*  the state stack                     */
   YY_parse_STYPE yyvsa[YYINITDEPTH];        /*  the semantic value stack            */
@@ -1130,8 +1130,8 @@ YYLABEL(yyreduce)
 #endif
 
 
-/* #line 783 "/u/icdc/rdt/tools/lib/bison.cc" */
-#line 1096 "y.tab.c"
+/* #line 822 "/usr/local/lib/bison.cc" */
+#line 1135 "y.tab.c"
 
   switch (yyn) {
 
@@ -1751,7 +1751,7 @@ case 53:
     break;}
 }
 
-#line 783 "/u/icdc/rdt/tools/lib/bison.cc"
+#line 822 "/usr/local/lib/bison.cc"
    /* the action file gets copied in in place of this dollarsign  */
   yyvsp -= yylen;
   yyssp -= yylen;
@@ -1952,8 +1952,8 @@ YYLABEL(yyerrhandle)
 
 /* END */
 
-/* #line 982 "/u/icdc/rdt/tools/lib/bison.cc" */
-#line 1918 "y.tab.c"
+/* #line 1021 "/usr/local/lib/bison.cc" */
+#line 1957 "y.tab.c"
 #line 649 "parse.y"
 
 

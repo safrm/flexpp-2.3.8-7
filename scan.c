@@ -400,7 +400,6 @@ static char rcsid[] =
 #ifndef YY_lex_OUT
 #define YY_lex_OUT yyout
 #endif
-
 #ifndef YY_lex_LEX_RETURN
 #define YY_lex_LEX_RETURN int
 #else
@@ -1712,7 +1711,7 @@ goto find_rule; \
 }
 #define yymore() yymore_used_but_not_detected
 #define YY_MORE_ADJ 0
-#line 370 "/u/icdc/rdt/tools/lib/flexskel.cc"
+#line 369 "/u/icdc/rdt/tools/lib/flexskel.cc"
 #ifndef YY_USE_CLASS
 static yy_state_type yy_get_previous_state YY_PROTO(( void ));
 static yy_state_type yy_try_NUL_trans YY_PROTO(( yy_state_type current_state ));
@@ -1745,7 +1744,7 @@ YY_lex_LEX_RETURN YY_lex_CLASS::YY_lex_LEX ( YY_lex_LEX_PARAM)
     Char nmdef[MAXLINE], myesc();
 
 /* % end of prolog */ 
-#line 395 "/u/icdc/rdt/tools/lib/flexskel.cc"
+#line 394 "/u/icdc/rdt/tools/lib/flexskel.cc"
 
     if ( yy_init )
 	{
@@ -1774,7 +1773,7 @@ YY_lex_LEX_RETURN YY_lex_CLASS::YY_lex_LEX ( YY_lex_LEX_PARAM)
     while ( 1 )         /* loops until end-of-file is reached */
 	{
 /* % yymore()-related code goes here */ 
-#line 423 "/u/icdc/rdt/tools/lib/flexskel.cc"
+#line 422 "/u/icdc/rdt/tools/lib/flexskel.cc"
 	yy_cp = yy_c_buf_p;
 
 	/* support of yy___text */
@@ -1806,7 +1805,7 @@ yy_match:
 	    ++yy_cp;
 	    }
 	while ( yy_current_state != 529 );
-#line 434 "/u/icdc/rdt/tools/lib/flexskel.cc"
+#line 433 "/u/icdc/rdt/tools/lib/flexskel.cc"
 
 yy_find_action:
 /* % code to find the action number goes here */ 
@@ -1847,7 +1846,7 @@ find_rule: /* we branch to this label when backtracking */
 	    yy_current_state = *--yy_state_ptr;
 	    yy_lp = yy_accept[yy_current_state];
 	    }
-#line 437 "/u/icdc/rdt/tools/lib/flexskel.cc"
+#line 436 "/u/icdc/rdt/tools/lib/flexskel.cc"
 
 	YY_DO_BEFORE_ACTION;
 	YY_USER_ACTION;
@@ -2775,7 +2774,7 @@ YY_FATAL_ERROR( "flex scanner jammed" );
 	    case YY_STATE_EOF(DEFINE_DECLARE):
 	    case YY_STATE_EOF(DEFINE_CONTENT):
 		yyterminate();
-#line 487 "/u/icdc/rdt/tools/lib/flexskel.cc"
+#line 463 "/u/icdc/rdt/tools/lib/flexskel.cc"
 
 	    case YY_END_OF_BUFFER:
 		{
@@ -2824,7 +2823,7 @@ YY_FATAL_ERROR( "flex scanner jammed" );
 		    else
 			{
 /* % code to do backtracking for compressed tables and set up yy_cp goes here */ 
-#line 535 "/u/icdc/rdt/tools/lib/flexskel.cc"
+#line 511 "/u/icdc/rdt/tools/lib/flexskel.cc"
 			goto yy_find_action;
 			}
 		    }
@@ -3008,7 +3007,7 @@ long YY_lex_CLASS::yy_get_previous_state_()
 	++yy_current_state;
     yy_state_ptr = yy_state_buf;
     *yy_state_ptr++ = yy_current_state;
-#line 711 "/u/icdc/rdt/tools/lib/flexskel.cc"
+#line 683 "/u/icdc/rdt/tools/lib/flexskel.cc"
 
     for ( yy_cp = yy___text + YY_MORE_ADJ; yy_cp < yy_c_buf_p; ++yy_cp )
 	{
@@ -3022,7 +3021,7 @@ long YY_lex_CLASS::yy_get_previous_state_()
 	    }
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 	*yy_state_ptr++ = yy_current_state;
-#line 715 "/u/icdc/rdt/tools/lib/flexskel.cc"
+#line 687 "/u/icdc/rdt/tools/lib/flexskel.cc"
 	}
 
 #ifndef YY_USE_CLASS
@@ -3068,7 +3067,7 @@ long YY_lex_CLASS::yy_try_NUL_trans_(long yy_current_state_)
     yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
     *yy_state_ptr++ = yy_current_state;
     yy_is_jam = (yy_current_state == 529);
-#line 749 "/u/icdc/rdt/tools/lib/flexskel.cc"
+#line 721 "/u/icdc/rdt/tools/lib/flexskel.cc"
 
 #ifndef YY_USE_CLASS
     return ( yy_is_jam ? 0 : yy_current_state );

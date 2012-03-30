@@ -1,7 +1,7 @@
 #ifndef YY_parse_h_included
 #define YY_parse_h_included
 
-#line 1 "/u/icdc/rdt/tools/lib/bison.h"
+#line 1 "/usr/local/lib/bison.h"
 /* before anything */
 #ifdef c_plusplus
 #ifndef __cplusplus
@@ -16,10 +16,10 @@
 #endif
 #include <stdio.h>
 
-/* #line 14 "/u/icdc/rdt/tools/lib/bison.h" */
+/* #line 14 "/usr/local/lib/bison.h" */
 #line 21 "y.tab.h"
 
-#line 14 "/u/icdc/rdt/tools/lib/bison.h"
+#line 14 "/usr/local/lib/bison.h"
  /* %{ and %header{ and %union, during decl */
 #ifndef YY_parse_COMPATIBILITY
 #ifndef YY_USE_CLASS
@@ -70,32 +70,32 @@
 
 #ifndef YY_parse_PURE
 
-/* #line 63 "/u/icdc/rdt/tools/lib/bison.h" */
+/* #line 63 "/usr/local/lib/bison.h" */
 #line 75 "y.tab.h"
 
-#line 63 "/u/icdc/rdt/tools/lib/bison.h"
+#line 63 "/usr/local/lib/bison.h"
 /* YY_parse_PURE */
 #endif
 
-/* #line 65 "/u/icdc/rdt/tools/lib/bison.h" */
+/* #line 65 "/usr/local/lib/bison.h" */
 #line 82 "y.tab.h"
 
-#line 65 "/u/icdc/rdt/tools/lib/bison.h"
+#line 65 "/usr/local/lib/bison.h"
 /* prefix */
 #ifndef YY_parse_DEBUG
 
-/* #line 67 "/u/icdc/rdt/tools/lib/bison.h" */
+/* #line 67 "/usr/local/lib/bison.h" */
 #line 89 "y.tab.h"
 
-#line 67 "/u/icdc/rdt/tools/lib/bison.h"
+#line 67 "/usr/local/lib/bison.h"
 /* YY_parse_DEBUG */
 #endif
 #ifndef YY_parse_LSP_NEEDED
 
-/* #line 70 "/u/icdc/rdt/tools/lib/bison.h" */
+/* #line 70 "/usr/local/lib/bison.h" */
 #line 97 "y.tab.h"
 
-#line 70 "/u/icdc/rdt/tools/lib/bison.h"
+#line 70 "/usr/local/lib/bison.h"
  /* YY_parse_LSP_NEEDED*/
 #endif
 /* DEFAULT LTYPE*/
@@ -170,7 +170,7 @@ extern YY_parse_STYPE YY_parse_LVAL;
 #endif
 
 
-/* #line 143 "/u/icdc/rdt/tools/lib/bison.h" */
+/* #line 143 "/usr/local/lib/bison.h" */
 #line 175 "y.tab.h"
 #define	CHAR	258
 #define	NUMBER	259
@@ -183,7 +183,7 @@ extern YY_parse_STYPE YY_parse_LVAL;
 #define	EOF_OP	266
 
 
-#line 143 "/u/icdc/rdt/tools/lib/bison.h"
+#line 143 "/usr/local/lib/bison.h"
  /* #defines token */
 /* after #define tokens, before const tokens S5*/
 #else
@@ -224,7 +224,7 @@ public:
 #if YY_parse_USE_CONST_TOKEN != 0
 /* static const int token ... */
 
-/* #line 182 "/u/icdc/rdt/tools/lib/bison.h" */
+/* #line 182 "/usr/local/lib/bison.h" */
 #line 229 "y.tab.h"
 static const int CHAR;
 static const int NUMBER;
@@ -237,12 +237,12 @@ static const int PREVCCL;
 static const int EOF_OP;
 
 
-#line 182 "/u/icdc/rdt/tools/lib/bison.h"
+#line 182 "/usr/local/lib/bison.h"
  /* decl const */
 #else
 enum YY_parse_ENUM_TOKEN { YY_parse_NULL_TOKEN=0
 
-/* #line 185 "/u/icdc/rdt/tools/lib/bison.h" */
+/* #line 185 "/usr/local/lib/bison.h" */
 #line 247 "y.tab.h"
 	,CHAR=258
 	,NUMBER=259
@@ -255,7 +255,7 @@ enum YY_parse_ENUM_TOKEN { YY_parse_NULL_TOKEN=0
 	,EOF_OP=266
 
 
-#line 185 "/u/icdc/rdt/tools/lib/bison.h"
+#line 185 "/usr/local/lib/bison.h"
  /* enum token */
      }; /* end of enum declaration */
 #endif
@@ -308,6 +308,6 @@ public:
 #endif
 /* END */
 
-/* #line 236 "/u/icdc/rdt/tools/lib/bison.h" */
+/* #line 236 "/usr/local/lib/bison.h" */
 #line 313 "y.tab.h"
 #endif
