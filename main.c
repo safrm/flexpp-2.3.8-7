@@ -423,6 +423,23 @@ int status;
     }
 
 
+#ifdef	WIN32
+// used to load bison.cc/bison.h from the same directory as flex++.exe
+// note that this function will leak memory unless the caller
+// deallocates the return value
+char* computeFileName( char* defaultFileName ) {
+	char exeName[256];
+	char* result;
+
+	GetModuleFileName(NULL,exeName,sizeof(exeName));
+	strcpy(strrchr(exeName,'\\')+1,defaultFileName);
+	result=(char*)malloc(strlen(exeName)+1);
+	strcpy(result,exeName);
+	return result;
+}
+#endif
+
+
 /* flexinit - initialize flex
  *
  * synopsis
@@ -538,18 +555,24 @@ char **argv;
 			flexerror( "-g flag must be given separately" );
 
 		    includefilename = arg + i + 1;
+			if(*includefilename=='\0')
+				flexerror("no space is allowed between -g and a file name");
 		    goto get_next_arg;
 		case 'h':
 		    if ( i != 1 )
 			flexerror( "-h flag must be given separately" );
 
 		    headerfilename = arg + i + 1;
+			if(*headerfilename=='\0')
+				flexerror("no space is allowed between -h and a file name");
 		    goto get_next_arg;
 		case 'o':
 		    if ( i != 1 )
 			flexerror( "-o flag must be given separately" );
 
 		    outputfilename = arg + i + 1;
+			if(*outputfilename=='\0')
+				flexerror("no space is allowed between -o and a file name");
 		    goto get_next_arg;
 
 		case 'H':
@@ -557,6 +580,8 @@ char **argv;
 			flexerror( "-H flag must be given separately" );
 
 		    skelheaderfilename = arg + i + 1;
+			if(*skelheaderfilename=='\0')
+				flexerror("no space is allowed between -H and a file name");
 		    goto get_next_arg;
 
 
@@ -633,12 +658,20 @@ get_next_arg: /* used by -C and -S flags in lieu of a "continue 2" control */
 	flexerror( "-t (generate to stdout) and -o (generate to file) are mutually exclusive" );
     if ( ! skelname )
 	{
-	skelname=DEFAULT_SKELETON_FILE;
+#ifdef	WIN32
+		skelname = computeFileName( DEFAULT_SKELETON_FILE );
+#else
+		skelname = DEFAULT_SKELETON_FILE;
+#endif
 	}
 
     if ( ! skelheaderfilename )
 	{
-	skelheaderfilename=DEFAULT_SKELETONHEADER_FILE;
+#ifdef	WIN32
+		skelheaderfilename = computeFileName( DEFAULT_SKELETONHEADER_FILE );
+#else
+		skelheaderfilename=DEFAULT_SKELETONHEADER_FILE;
+#endif
 	}
     if ( ! use_stdout )
 	{FILE *prev_stdout;
@@ -753,7 +786,7 @@ get_next_arg: /* used by -C and -S flags in lieu of a "continue 2" control */
 	{
 	static char temp_action_file_name[32];
 
-#ifndef SHORT_FILE_NAMES
+#if !defined(SHORT_FILE_NAMES) && !defined(WIN32)
 	(void) strcpy( temp_action_file_name, "/tmp/flexXXXXXX" );
 #else
 	(void) strcpy( temp_action_file_name, "flXXXXXX.tmp" );

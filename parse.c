@@ -26,42 +26,47 @@
    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
 
 /* HEADER SECTION */
-#ifndef _MSDOS
-#ifdef MSDOS
-#define _MSDOS
+#if defined( _MSDOS ) || defined(MSDOS) || defined(__MSDOS__) 
+#pragma message( "BISON++: __MSDOS_AND_ALIKE")
+#define __MSDOS_AND_ALIKE
 #endif
-#endif
-/* turboc */
-#ifdef __MSDOS__
-#ifndef _MSDOS
-#define _MSDOS
-#endif
+#if defined(_WIN32) && defined(_MSC_VER)
+#pragma message( "BISON++: __HAVE_NO_ALLOCA && __MSDOS_AND_ALIKE")
+#define __HAVE_NO_ALLOCA
+#define __MSDOS_AND_ALIKE
 #endif
 
 #ifndef alloca
 #if defined( __GNUC__)
+#pragma message( "BISON++: __GNUC__: define alloca __builtin_alloca")
 #define alloca __builtin_alloca
 
 #elif (!defined (__STDC__) && defined (sparc)) || defined (__sparc__) || defined (__sparc)  || defined (__sgi)
+#pragma message( "BISON++: !__STDC__ && sparc: alloca.h")
 #include <alloca.h>
 
-#elif defined (_MSDOS)
+#elif defined (__MSDOS_AND_ALIKE)
+#pragma message( "BISON++: __MSDOS_AND_ALIKE: malloc.h")
 #include <malloc.h>
 #ifndef __TURBOC__
 /* MS C runtime lib */
+#pragma message( "BISON++: !__TURBOC__: define alloca _alloca")
 #define alloca _alloca
 #endif
 
 #elif defined(_AIX)
+#pragma message( "BISON++: _AIX: malloc.h")
 #include <malloc.h>
 #pragma alloca
 
 #elif defined(__hpux)
 #ifdef __cplusplus
+#pragma message( "BISON++: __cplusplus: extern C void *alloca")
 extern "C" {
 void *alloca (unsigned int);
 };
 #else /* not __cplusplus */
+#pragma message( "BISON++: !__cplusplus: void *alloca")
 void *alloca ();
 #endif /* not __cplusplus */
 
@@ -689,13 +694,44 @@ YYBEGINDECLARELABEL
   YYDECLARELABEL(yyerrpop)   /* pop the current state because it cannot handle the error token */
   YYDECLARELABEL(yyerrhandle)  
 YYENDDECLARELABEL
+/* ALLOCA SIMULATION */
+/* __HAVE_NO_ALLOCA */
+#ifdef __HAVE_NO_ALLOCA
+#pragma message( "BISON++: __HAVE_NO_ALLOCA definition")
+static int __alloca_free_ptr(char *ptr,char *ref)
+{if(ptr!=ref) free(ptr);
+ return 0;}
+
+#define __ALLOCA_alloca(size) malloc(size) 
+#define __ALLOCA_free(ptr,ref) __alloca_free_ptr((char *)ptr,(char *)ref)
+
+#ifdef YY_parse_LSP_NEEDED
+#define __ALLOCA_return(num) \
+            return( __ALLOCA_free(yyss,yyssa)+\
+		    __ALLOCA_free(yyvs,yyvsa)+\
+		    __ALLOCA_free(yyls,yylsa)+\
+		   (num))
+#else
+#define __ALLOCA_return(num) \
+            return( __ALLOCA_free(yyss,yyssa)+\
+		    __ALLOCA_free(yyvs,yyvsa)+\
+		   (num))
+#endif
+#else
+#pragma message( "BISON++: !__HAVE_NO_ALLOCA definition")
+#define __ALLOCA_return(num) return(num)
+#define __ALLOCA_alloca(size) alloca(size)
+#define __ALLOCA_free(ptr,ref) 
+#endif
+
+/* ENDALLOCA SIMULATION */
 
 #define yyerrok         (yyerrstatus = 0)
 #define yyclearin       (YY_parse_CHAR = YYEMPTY)
 #define YYEMPTY         -2
 #define YYEOF           0
-#define YYACCEPT        return(0)
-#define YYABORT         return(1)
+#define YYACCEPT        __ALLOCA_return(0)
+#define YYABORT         __ALLOCA_return(1)
 #define YYERROR         YYGOTO(yyerrlab1)
 /* Like YYERROR except do call yyerror.
    This remains here temporarily to ease the
@@ -922,18 +958,21 @@ YYLABEL(yynewstate)
       if (yystacksize >= YYMAXDEPTH)
 	{
 	  YY_parse_ERROR("parser stack overflow");
-	  return 2;
+	  __ALLOCA_return(2);
 	}
       yystacksize *= 2;
       if (yystacksize > YYMAXDEPTH)
 	yystacksize = YYMAXDEPTH;
-      yyss = (short *) alloca (yystacksize * sizeof (*yyssp));
+      yyss = (short *) __ALLOCA_alloca (yystacksize * sizeof (*yyssp));
       __yy_bcopy ((char *)yyss1, (char *)yyss, size * sizeof (*yyssp));
-      yyvs = (YY_parse_STYPE *) alloca (yystacksize * sizeof (*yyvsp));
+      __ALLOCA_free(yyss1,yyssa);
+      yyvs = (YY_parse_STYPE *) __ALLOCA_alloca (yystacksize * sizeof (*yyvsp));
       __yy_bcopy ((char *)yyvs1, (char *)yyvs, size * sizeof (*yyvsp));
+      __ALLOCA_free(yyvs1,yyvsa);
 #ifdef YY_parse_LSP_NEEDED
-      yyls = (YY_parse_LTYPE *) alloca (yystacksize * sizeof (*yylsp));
+      yyls = (YY_parse_LTYPE *) __ALLOCA_alloca (yystacksize * sizeof (*yylsp));
       __yy_bcopy ((char *)yyls1, (char *)yyls, size * sizeof (*yylsp));
+      __ALLOCA_free(yyls1,yylsa);
 #endif
 #endif /* no yyoverflow */
 

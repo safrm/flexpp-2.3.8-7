@@ -28,6 +28,9 @@
 
 /* @(#) $Header: /usr/fsys/odin/a/vern/flex/RCS/flexdef.h,v 2.10 90/08/03 14:09:52 vern Exp $ (LBL) */
 
+#ifdef	WIN32
+	#include <Windows.h>
+#endif
 
 #ifndef FILE
 #include <stdio.h>
@@ -88,21 +91,27 @@ extern int write PROTO((int, char*, int));
 #endif
 
 #ifdef SYS_V
-#include <string.h>
+	#include <string.h>
+#elif WIN32
+	#include <string.h>
+	#include <math.h>
+	#include <process.h>
+	#include <malloc.h>
+	#define __STDC__ 1
 #else
-#ifndef _MSDOS
-#include <strings.h>
-#endif /* end _MSDOS */
-#ifdef lint
-char *sprintf(); /* keep lint happy */
-#endif
-#ifdef SCO_UNIX
-void *memset();
-#else
-#if defined(ATARI) || defined(TURBO)
-char *memset();
-#endif
-#endif
+	#ifndef _MSDOS
+		#include <strings.h>
+	#endif /* end _MSDOS */
+	#ifdef lint
+		char *sprintf(); /* keep lint happy */
+	#endif
+	#ifdef SCO_UNIX
+		void *memset();
+	#else
+		#if defined(ATARI) || defined(TURBO)
+			char *memset();
+		#endif
+	#endif
 #endif
 
 #ifdef ATARI

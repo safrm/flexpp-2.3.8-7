@@ -42,11 +42,11 @@
 #LIBDIR = /usr/local/lib
 #AUXDIR = /usr/local/lib
 #MANDIR = /usr/man/manl
-DESTDIR = $(ENV_DIR)/
-BINDIR = tools/bin
-LIBDIR = tools/lib
-AUXDIR = tools/lib
-MANDIR = doc/man/man1
+DESTDIR = /usr/
+BINDIR = bin
+LIBDIR = lib
+AUXDIR = lib
+MANDIR = man/man1
 MANEXT = 1
 INSTALLMAN = man
 .SUFFIXES : .dman

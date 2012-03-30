@@ -33,23 +33,23 @@
 #endif
 
 #ifdef __cplusplus
+#pragma message( "FLEX++: __cplusplus in use") 
 #include <stdlib.h>
 #define YY_USE_CONST
 #define YY_USE_PROTOS
 #ifndef YY_USE_CLASS
 #define YY_USE_CLASS
 #endif
-#ifndef _MSDOS
-#include <osfcn.h>
-#endif
 #else   /* ! __cplusplus */
 #ifdef __STDC__
 #ifdef __GNUC__
+#pragma message( "FLEX++: __STDC__ && __GNUC__ = stddef.h") 
 #include <stddef.h>
 void *malloc( size_t );
 void free( void* );
 int read();
 #else
+#pragma message( "FLEX++: stdlib.h") 
 #include <stdlib.h>
 #endif  /* __GNUC__ */
 #define YY_USE_PROTOS
@@ -85,7 +85,7 @@ int read();
 
 /* amount of stuff to slurp up with each read */
 #ifndef YY_READ_BUF_SIZE
-#define YY_READ_BUF_SIZE 8192
+#define YY_READ_BUF_SIZE 163840
 #endif
 /* size of default input buffer */
 #ifndef YY_BUF_SIZE
